@@ -53,12 +53,14 @@ configuration of MailerQ.
  * outbox message queue.
  */
 
-$address   = 'amqp://guest:guest@localhost';    // same as the rabbitmq-address option in the config file
+
+$hostname  = 'localhost'                        // same as the rabbitmq-address hostname in the config file
+$username  = 'guest'                            // same as the rabbitmq-address username in the config file
+$password  = 'guest'                            // same as the rabbitmq-address password in the config file
 $outbox    = 'outbox_test';                     // same as the rabbitmq-outbox option in the config file
 $resultbox = 'results_test';                    // same as the rabbitmq-results option in the config file
 
 // email message settings
-$recipientDomain = 'example.org';      // domain where the test message should be delivered
 $recipientEmail  = 'info@example.org'; // email where the test message should be delivered
 $fromAddress     = 'me@my-domain.com'; // address where the email was sent from
 
@@ -226,7 +228,6 @@ try
         'host'      =>  $hostname,
         'login'     =>  $username,
         'password'  =>  $password,
-        'vhost'     =>  $vhost
     ));
 
     // connect to the RabbitMQ server
